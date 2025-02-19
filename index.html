@@ -14,50 +14,110 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #f5f5dc;
+            background-color: #430d15;
             margin: 0;
             font-family: 'Permanent Marker', cursive;
         }
 
-        .tbd-label-container {
-            height: 20%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
         .tbd-label {
             font-size: 5rem;
-            color: #ff3366;
-            text-shadow: 2px 2px 0px #660033, 4px 4px 0px #000000;
+            color: #ffccd5;
+            text-shadow: 2px 2px 0px #29090e, 4px 4px 0px #000000;
+        }
+
+        .logo-container, .my-likes-container {
+            padding: 1rem;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #551520;
         }
 
         .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: auto; /* Push the container to the bottom */
+            margin-top: 2rem;
+            margin-bottom: 3rem;
         }
 
-        .logo-container img {
-            width: 75px; /* Make the width smaller */
-            height: 75px; /* Make the height smaller */
-            margin: 0 10px;
+        .logo-container img, .my-likes-container img {
+            width: 75px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .my-likes-container {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            background-color: #551520;
+        }
+
+        .emoji-icon {
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffccd5;
+        }
+
+        .hidden-mu-images, .hidden-board-images {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            gap: 1rem;
+            background-color: #931c2e;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            z-index: 9999;
+        }
+
+        .lib-tech-logo-container:hover .hidden-board-images, .manchester-united-logo-container:hover .hidden-mu-images {
+            display: flex;
+        }
+
+        .hidden-board-images img, .hidden-mu-images img {
+            height: 75vh;
+            width: auto;
         }
 
     </style>
 </head>
 
 <body>
-<div class="tbd-label-container">
-    <h1 class="tbd-label">TBD</h1>
-</div>
+    <div class="tbd-label-container">
+        <h1 class="tbd-label">TBD</h1>
+    </div>
 
-<div class="logo-container">
-    <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java Logo">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png" alt="Kotlin Logo">
-</div>
+    <div class="logo-container">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java Logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png" alt="Kotlin Logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Spring_Boot.svg" alt="Spring Boot Logo">
+    </div>
 
+    <div class="my-likes-container">
+        <div class="emoji-icon">👍</div>
+
+        <div class="manchester-united-logo-container">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg" alt="Manchester United Logo">
+            <div class="hidden-mu-images">
+                <img src="./res/cantona.gif" alt="Manchester United Logo">
+            </div>
+        </div>
+
+        <div class="lib-tech-logo-container">
+            <img src="https://www.lib-tech.com/media/catalog/product/cache/bd322120d976889db2881a06b8dbba23/2/4/2425-LIB-Stacked-Logo-Diecut-Sticker-Black.jpg" alt="Lib Tech Logo" class="lib-tech-logo">
+
+            <div class="hidden-board-images">
+                <img src="./res/board.webp" alt="Boa  rd">
+                <img src="./res/board-back.webp" alt="Board Back">
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
